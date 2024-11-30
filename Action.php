@@ -369,7 +369,7 @@ class Action extends Widget implements \Widget\ActionInterface
         $mailer->AddAddress($this->_email->reciver, $this->_email->reciverName);
         $mailer->SMTPOptions = array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false, 'allow_self_signed' => true));
 
-        $result = $mailer->Send();
+        $result = $mailer->send();
         if (!$result) $result = $mailer->ErrorInfo;
 
         $mailer->ClearAddresses();
